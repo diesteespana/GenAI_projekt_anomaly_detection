@@ -1,4 +1,4 @@
-"""Variational Autoencoder for anomaly detection — PERSON 2's file.
+"""Variational Autoencoder for anomaly detection
 
 This file implements the VAE contribution used in the project:
   * ELBO objective: reconstruction term + beta-scaled KL divergence.
