@@ -1,8 +1,4 @@
-"""Adversarial Autoencoder anomaly detection -- PERSON 3.
-
-This file keeps the old project entry point called GANAD, but the model
-implemented here is an Adversarial Autoencoder (AAE). This avoids changing the
-rest of the code if scripts still call --model gan.
+"""Adversarial Autoencoder anomaly detection
 
 Idea:
   * The autoencoder learns to reconstruct normal images.
@@ -10,12 +6,6 @@ Idea:
     samples from a simple prior N(0, I).
   * At test time, anomalies should reconstruct worse, so the anomaly score is
     the per-sample reconstruction error. Higher score = more anomalous.
-
-Integration note (Person 1): the encoder/decoder below now come from the
-shared blocks.py instead of being redefined here, so the AAE uses the exact
-same backbone as the AE and VAE (they were already the same architecture,
-just written out twice). Also dropped the leftover debug print. Nothing about
-the training loop or the scoring changed.
 """
 
 from __future__ import annotations
@@ -172,7 +162,3 @@ class AAEAD(AnomalyModel):
         return err.cpu().numpy()
 
 
-# Compatibility with the existing project:
-# if __init__.py or run_experiment.py imports GANAD from gan.py,
-# it will actually use the AAE implementation above.
-GANAD = AAEAD
