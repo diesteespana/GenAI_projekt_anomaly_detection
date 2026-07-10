@@ -1,9 +1,7 @@
-"""Baseline experiment: AE across every Fashion-MNIST normal class (Person 1).
+"""Baseline experiment: AE across every Fashion-MNIST normal class.
 
 Trains the autoencoder ten times, once per choice of "normal" class, and
-aggregates AUROC / PR-AUC into a table + bar chart. This is the headline
-baseline result for the paper: it shows performance is robust across classes,
-not cherry-picked from one easy class.
+aggregates AUROC / PR-AUC into a table + bar chart.
 
 Usage:
     python scripts/run_baseline_all_classes.py --epochs 15
