@@ -1,4 +1,4 @@
-"""Model comparison / integration runner (Person 1).
+"""Model comparison / integration runner.
 
 Trains every registered model that is implemented, on one shared data split, and
 produces the integrated comparison artefacts the report needs:
@@ -6,9 +6,6 @@ produces the integrated comparison artefacts the report needs:
   * results/comparison/overlay_roc.png     — all ROC curves on one axis
   * results/comparison/comparison_bars.png — AUROC/PR-AUC/best-F1 bar chart
   * results/comparison/comparison.md       — the summary table
-
-Models whose fit() is not yet implemented (should any model be left as a stub)
-are skipped gracefully, so this runs end-to-end at any point in the project.
 
 Example:
     python scripts/run_comparison.py --epochs 20 --normal-class 0
