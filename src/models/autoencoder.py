@@ -1,7 +1,4 @@
-"""Convolutional Autoencoder baseline (Person 1).
-
-Standard encoder-decoder trained to reconstruct normal images. Anomalies
-weren't seen in training so they reconstruct badly -> high error -> flagged.
+"""Convolutional Autoencoder baseline.
 """
 
 from __future__ import annotations
