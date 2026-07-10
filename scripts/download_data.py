@@ -1,14 +1,3 @@
-"""Download Fashion-MNIST (cross-platform, no shell snippets).
-
-Usage:
-    python scripts/download_data.py
-    python scripts/download_data.py --data-root ./data
-
-This simply triggers the loader once, which fetches the data (with the automatic
-GitHub-mirror fallback) and caches it under <data-root>/FashionMNIST/raw. Run it
-before offline work, or just let the first experiment download on demand.
-"""
-
 from __future__ import annotations
 
 import argparse
