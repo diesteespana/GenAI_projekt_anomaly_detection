@@ -1,11 +1,11 @@
 """Project extensions: β-VAE study, latent visualization, and cost analysis.
 
 Runs the three additions in one place and writes artefacts to results/studies/
-and report/figures/. Designed to finish quickly on CPU.
+and report/figures/.
 
     python scripts/run_studies.py --epochs 8
 
-Written as shared tooling (Person 1) so the beta-study, latent-dim sweep, latent
+Written as shared tooling so the beta-study, latent-dim sweep, latent
 visualization, and cost analysis all use the same harness.
 """
 
