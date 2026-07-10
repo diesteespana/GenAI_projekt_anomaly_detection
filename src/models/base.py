@@ -1,7 +1,6 @@
 """Common interface for all anomaly-detection models.
 
-AE, VAE and AAE all subclass this and implement fit() + anomaly_score(). Keep
-the signatures the same so evaluation.py can score any of them the same way.
+AE, VAE and AAE all subclass this and implement fit() + anomaly_score().
 """
 
 from __future__ import annotations
