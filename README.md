@@ -17,8 +17,9 @@ latent-regularization strategy.
 ## Datasets
 - **Fashion-MNIST one-class** — light, fully reproducible; used for development
   and as an ablation. Auto-downloaded (with a GitHub-mirror fallback).
-- **MVTec AD** — the headline industrial-defect benchmark; manual download (see
-  `data_cards/mvtec_ad.md`).
+- **MVTec AD** — a preliminary loader is included. The current
+  architecture and reported experiments are validated on Fashion-MNIST;
+  full MVTec adaptation wan't done at the end.
 
 Label convention everywhere: `0 = normal`, `1 = anomaly`.
 
@@ -29,13 +30,13 @@ src/
   utils.py           # set_seed, get_device, JSON/plot helpers            [P1]
   data.py            # one-class loaders + auto mirror-fallback download   [P1]
   metrics.py         # pure metric functions (AUROC, PR-AUC, best-F1)      [P1]
-  evaluation.py      # scoring harness: metrics + plots + loss curves      [P1]
-  visualize.py       # reconstruction grids, overlay ROC, per-class bars   [P1]
+  evaluation.py      # scoring harness: metrics + plots + loss curves      [P2]
+  visualize.py       # reconstruction grids, overlay ROC, per-class bars   [P3]
   models/
     base.py          # AnomalyModel interface every model implements       [P1]
     blocks.py        # shared conv encoder/decoder (no duplication)        [P1]
     autoencoder.py   # conv AE baseline                                    [P1]
-    vae.py           # VAE — KL-regularized latent (working, TODOs)       [P2]
+    vae.py # VAE — KL-regularized probabilistic latent model               [P2]
     aae.py           # AAE — adversarially-regularized latent (working)     [P3]
 scripts/
   download_data.py         # fetch Fashion-MNIST (cross-platform)
@@ -66,7 +67,6 @@ classes (mean of 10, 15 epochs each; see `results/baseline_all_classes/`).
 - `make test` runs fast, synthetic unit tests (metrics, model interface, seeding).
 - `make test-all` also runs the slow integration smoke test (downloads data,
   trains one epoch).
-- GitHub Actions (`.github/workflows/ci.yml`) runs the fast tests on every push.
 
 ## Team split
 | Person | Owns |
@@ -75,7 +75,7 @@ classes (mean of 10, 15 epochs each; see `results/baseline_all_classes/`).
 | **Person 2 (Claudio)** | VAE: theory (ELBO, reparameterization, KL), reconstruction-probability scoring, β-ablation, paper sections |
 | **Person 3 (Andrés)** | AAE: theory (latent discriminator, adversarial latent regularization, prior matching), experiments/ablations, paper sections |
 
-## Adding a model (Person 2(Claudio) & 3(Andrés))
+## Adding another model
 1. Subclass `AnomalyModel` in your file under `src/models/`.
 2. Implement `fit(train_loader, epochs)` and `anomaly_score(x) -> np.ndarray`
    (higher = more anomalous). Reuse the shared `blocks.py` backbone.
