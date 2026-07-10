@@ -1,0 +1,8 @@
+# Pinned lower bounds for reproducibility. The versions in the trailing comments
+# are those used to produce the reported results.
+torch>=2.0          # tested with 2.12.1
+torchvision>=0.15   # tested with 0.27.1
+scikit-learn>=1.2   # tested with 1.8.0
+numpy>=1.24         # tested with 2.4.4
+matplotlib>=3.6     # tested with 3.10.8
+pytest>=7.0         # test suite
