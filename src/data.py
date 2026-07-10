@@ -1,6 +1,6 @@
 """Data loaders for one-class anomaly detection.
 
-Owned by Person 1 (integration). Every model trains and is evaluated through
+Every model trains and is evaluated through
 these loaders, so the data split is identical for everyone.
 
 Two datasets:
@@ -10,10 +10,6 @@ Two datasets:
     manual download, see data_cards/mvtec_ad.md).
 
 Label convention everywhere: 0 = normal, 1 = anomaly.
-
-Reproducibility: if the default torchvision download mirror is unreachable, we
-automatically fall back to the GitHub mirror (see _ensure_fashion_mnist), so the
-loader works on locked-down networks and in CI without any manual step.
 """
 
 from __future__ import annotations
