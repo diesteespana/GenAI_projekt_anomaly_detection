@@ -10,7 +10,7 @@ This repository implements and compares three autoencoder-based models for one-c
 
 The main research question is:
 
-> Does regularizing the latent space improve reconstruction-based one-class anomaly detection, and does the regularization mechanism matter?
+ Does regularizing the latent space improve reconstruction-based one-class anomaly detection, and does the regularization mechanism matter?
 
 All models are trained only on normal samples. At test time, inputs with larger reconstruction errors receive higher anomaly scores.
 
