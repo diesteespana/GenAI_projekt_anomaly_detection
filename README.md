@@ -72,10 +72,10 @@ classes (mean of 10, 15 epochs each; see `results/baseline_all_classes/`).
 | Person | Owns |
 |---|---|
 | **Person 1 (Nicolás)** | shared framework (data, metrics, evaluation, interface, blocks, visualization), AE baseline, reproducibility + data cards, integration, paper assembly (Intro / Related Work / Results & Discussion) |
-| **Person 2** | VAE: theory (ELBO, reparameterization, KL), reconstruction-probability scoring, β-ablation, paper sections |
-| **Person 3** | AAE: theory (latent discriminator, adversarial latent regularization, prior matching), experiments/ablations, paper sections |
+| **Person 2 (Claudio)** | VAE: theory (ELBO, reparameterization, KL), reconstruction-probability scoring, β-ablation, paper sections |
+| **Person 3 (Andrés)** | AAE: theory (latent discriminator, adversarial latent regularization, prior matching), experiments/ablations, paper sections |
 
-## Adding a model (Person 2 & 3)
+## Adding a model (Person 2(Claudio) & 3(Andrés))
 1. Subclass `AnomalyModel` in your file under `src/models/`.
 2. Implement `fit(train_loader, epochs)` and `anomaly_score(x) -> np.ndarray`
    (higher = more anomalous). Reuse the shared `blocks.py` backbone.
