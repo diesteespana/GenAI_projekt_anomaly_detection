@@ -1,8 +1,7 @@
 """Unified experiment runner (single model, or all).
 
 One command trains and evaluates any of the three models on the same data split,
-writing metrics + plots into results/. This is the entry point everyone uses, so
-everyone is scored the same way. For the full side-by-side comparison with an
+writing metrics + plots into results/. For the full side-by-side comparison with an
 overlay ROC, use scripts/run_comparison.py instead.
 
 Examples:
