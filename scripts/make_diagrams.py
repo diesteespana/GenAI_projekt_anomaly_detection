@@ -1,9 +1,4 @@
-"""Generate the report's architecture diagrams (reproducible, no manual drawing).
-
-Outputs:
-  report/figures/aae_architecture.png  — the AAE pipeline
-  report/figures/latent_spectrum.png   — AE -> VAE -> AAE regularization spectrum
-
+"""
 Run:  python scripts/make_diagrams.py
 """
 
