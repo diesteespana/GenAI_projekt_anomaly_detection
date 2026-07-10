@@ -1,4 +1,4 @@
-"""Person 2 VAE experiment: scoring comparison + beta ablation.
+"""VAE experiment: scoring comparison + beta ablation.
 
 This script trains the VAE for several beta values and evaluates each trained
 model with two anomaly scores:
