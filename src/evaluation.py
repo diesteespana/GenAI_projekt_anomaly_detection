@@ -1,8 +1,6 @@
 """Shared evaluation harness.
 
-Owned by Person 1 (integration). Every model is scored through ``evaluate`` so
-the numbers are directly comparable. Person 2 and Person 3: you do not need to
-touch this file — just make your model implement ``AnomalyModel`` and pass it in.
+Every model is scored through ``evaluate`` so the numbers are directly comparable. 
 
 Metrics (computed in src/metrics.py):
   * AUROC   — threshold-free; main headline number.
@@ -11,7 +9,7 @@ Metrics (computed in src/metrics.py):
               so the paper can quote a concrete operating point.
 
 Outputs go to a results dir: a metrics JSON, three diagnostic plots (ROC,
-precision-recall, score histogram), and — if a training history is passed — a
+precision-recall, score histogram), and if a training history is passed a
 loss-curve plot.
 """
 
