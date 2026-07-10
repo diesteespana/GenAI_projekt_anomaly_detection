@@ -1,11 +1,9 @@
-"""Visualization utilities (Person 1, shared).
+"""Visualization utilities
 
-  * reconstruction_grid: input / reconstruction / error heatmap, normal vs
-    anomalous samples.
-  * overlay_roc: every model's ROC curve on one axis.
+reconstruction_grid: input / reconstruction / error heatmap, normal vs
+anomalous samples.
+overlay_roc: every model's ROC curve on one axis.
 
-Both just need the AnomalyModel interface, so they work for any model without
-changes.
 """
 
 from __future__ import annotations
