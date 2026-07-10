@@ -56,9 +56,12 @@ def main():
     p.add_argument("--results-dir", default="results")
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--beta", type=float, default=1.0, help="VAE beta-KL weight")
-    p.add_argument("--vae-score-method", default="reconstruction_probability",
-                   choices=["mse", "mc_mse", "reconstruction_probability"],
-                   help="VAE anomaly score used when --model vae")
+    p.add_argument(
+    "--vae-score-method",
+    default="mse",
+    choices=["mse", "mc_mse", "reconstruction_probability"],
+    help="VAE anomaly score used when --model vae",
+)
     p.add_argument("--mc-samples", type=int, default=10,
                    help="Monte-Carlo samples for VAE scoring")
     args = p.parse_args()
