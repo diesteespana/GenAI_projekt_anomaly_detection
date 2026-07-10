@@ -1,10 +1,7 @@
-"""Latent-space visualization (Person 1, for the studies script).
+"""Latent-space visualization
 
 Extracts each model's latent code for the test set and projects it to 2D with
 PCA and t-SNE, coloured by normal vs. anomaly.
-
-Could add UMAP as a third projection (pip install umap-learn); using PCA + t-SNE
-for now since both ship with scikit-learn.
 """
 
 from __future__ import annotations
